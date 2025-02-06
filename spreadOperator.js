@@ -68,3 +68,16 @@ const ingredients = [
 ];
 
 restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+restaurantCopy.mainMenu[0] = "Salad";
+
+console.log(restaurant.mainMenu)
