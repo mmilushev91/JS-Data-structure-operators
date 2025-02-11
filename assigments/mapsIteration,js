@@ -1,0 +1,60 @@
+// Maps: Iteration
+
+const books = [
+  (firstBook = {
+    title: "FirstBook",
+    author: ["FirstAuthor1", "FirstAuthor2", "FirstAuthor3"],
+    ISBN: "120121",
+    keywords: ["Keyword1", "Keyword2", "Keyword2"],
+    language: "bulgarian",
+    publisher: "Publisher",
+    thirdParty: {
+      goodreads: {
+        rating: 3, // <-- HERE
+        ratingsCount: 1733,
+        reviewsCount: 63,
+        fiveStarRatingCount: 976,
+        oneStarRatingCount: 13,
+      },
+    },
+    highlighted: true,
+    pages: 355,
+  }),
+  (secondBook = {
+    title: "SecondBook",
+    author: ["SecondAuthor1", "SecondAuthor2", "SecondAuthor3"],
+    ISBN: "120122",
+    keywords: ["Keyword4", "Keyword5", "Keyword6"],
+    language: "bulgarian",
+  }),
+  (ThirdBook = {
+    title: "ThirdBook",
+    author: "ThirdAuthor",
+    ISBN: "120123",
+    keywords: ["Keyword4", "Keyword8", "Keyword9"],
+    language: "bulgarian",
+    pages: 455,
+  }),
+  (FourthBook = {
+    title: "FourthBook",
+    author: "FourthAuthor",
+    ISBN: "120124",
+    keywords: ["Keyword10", "Keyword10", "Keyword12"],
+    language: "bulgarian",
+    pages: 555,
+  }),
+];
+// 14.1
+// Convert the first book object from the books array into a Map, and
+//  assign it to a firstBookMap variable.
+
+const firstBookMap = new Map(Object.entries(books[0]));
+console.log(firstBookMap);
+
+// 14.2
+// Use the for-of loop to iterate over firstBookMap, and log to the console keys that
+//  have numbers as values.
+
+for (const key of firstBookMap.keys()) {
+  if (typeof firstBookMap.get(key) === "number") console.log(key);
+}
